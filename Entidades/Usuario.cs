@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace WebApiAlmacen.Entidades
+namespace Ejercicio_Sesión_1.Entidades
 {
     public class Usuario
     {
