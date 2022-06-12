@@ -1,5 +1,6 @@
 using Ejercicio_Sesión_1;
 using Microsoft.EntityFrameworkCore;
+using Serilog;
 using WebApiAlmacen.Services;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -24,6 +25,10 @@ builder.Services.AddDbContext<ApplicationDbContext>(opciones =>
 builder.Services.AddHttpContextAccessor();
 
 //builder.Services.AddHostedService<TareaProgramadaService>();
+
+// Serilog
+Log.Logger = new LoggerConfiguration().ReadFrom.Configuration(builder.Configuration).CreateLogger();
+builder.Host.UseSerilog();
 
 var app = builder.Build();
 
