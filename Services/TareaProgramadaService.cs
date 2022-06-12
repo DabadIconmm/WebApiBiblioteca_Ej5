@@ -43,9 +43,17 @@ namespace WebApiAlmacen.Services
         private void Escribir(string mensaje)
         {
             var ruta = $@"{env.ContentRootPath}\wwwroot\{nombreArchivo}";
+            try
+            {
             using (StreamWriter writer = new StreamWriter(ruta, append: true))
             {
                 writer.WriteLine(mensaje);
+            }
+
+            }
+            catch (Exception error)
+            {
+                Console.WriteLine("Error en tareas programdas: " + error.Message);
             }
         }
     }

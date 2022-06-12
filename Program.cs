@@ -1,4 +1,6 @@
 using Ejercicio_Sesión_1;
+using Ejercicio_Sesión_1.Filtros;
+using Ejercicio_Sesión_1.Middlewares;
 using Microsoft.EntityFrameworkCore;
 using Serilog;
 using WebApiAlmacen.Services;
@@ -6,9 +8,12 @@ using WebApiAlmacen.Services;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+// Para evitar ciclos infinitos en entidades relacionadas
+builder.Services.AddControllers(
+    opciones => opciones.Filters.Add(typeof(FiltroDeExcepcion))
+    ).AddJsonOptions(opciones => opciones.JsonSerializerOptions.ReferenceHandler =
+System.Text.Json.Serialization.ReferenceHandler.IgnoreCycles);
 
-builder.Services.AddControllers().AddJsonOptions(opciones => opciones.JsonSerializerOptions.ReferenceHandler = 
-    System.Text.Json.Serialization.ReferenceHandler.IgnoreCycles);
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
@@ -24,13 +29,19 @@ builder.Services.AddDbContext<ApplicationDbContext>(opciones =>
 
 builder.Services.AddHttpContextAccessor();
 
-//builder.Services.AddHostedService<TareaProgramadaService>();
+builder.Services.AddHttpClient("webapi", x => { x.BaseAddress = new Uri("https://localhost:44381"); });
+
+builder.Services.AddHttpContextAccessor();
+
+builder.Services.AddHostedService<TareaProgramadaService>();
 
 // Serilog
 Log.Logger = new LoggerConfiguration().ReadFrom.Configuration(builder.Configuration).CreateLogger();
 builder.Host.UseSerilog();
 
 var app = builder.Build();
+app.UseMiddleware<LogFilePathIPMiddleware>();
+app.UseMiddleware<LogFileBodyHttpResponseMiddleware>();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

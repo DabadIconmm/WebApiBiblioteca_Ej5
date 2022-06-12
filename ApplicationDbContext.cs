@@ -35,5 +35,6 @@ namespace Ejercicio_Sesión_1
         public DbSet<Libro> Libros { get; set; }
         public DbSet<Editorial> Editoriales { get; set; }
         public DbSet<ConsultaKeyLess> ConsultaKeyLess { get; set; } // 4.10
+        public DbSet<Usuario> Usuarios { get; set; }
     }
 }

@@ -237,3 +237,4 @@ C:\Users\dabad\Documents\Work\IconWork\Formación\C#\Ejercicios\Sesion5_\Ejercic
 C:\Users\dabad\Documents\Work\IconWork\Formación\C#\Ejercicios\Sesion5_\Ejercicio5\WebApiBiblioteca_DanielAbad\bin\Debug\net6.0\Serilog.Sinks.File.dll
 C:\Users\dabad\Documents\Work\IconWork\Formación\C#\Ejercicios\Sesion5_\Ejercicio5\WebApiBiblioteca_DanielAbad\bin\Debug\net6.0\Serilog.Sinks.MSSqlServer.dll
 C:\Users\dabad\Documents\Work\IconWork\Formación\C#\Ejercicios\Sesion5_\Ejercicio5\WebApiBiblioteca_DanielAbad\bin\Debug\net6.0\Serilog.Sinks.PeriodicBatching.dll
+C:\Users\dabad\Documents\Work\IconWork\Formación\C#\Ejercicios\Sesion5_\Ejercicio5\WebApiBiblioteca_DanielAbad\bin\Debug\net6.0\Ejercicio Sesión 4.staticwebassets.runtime.json
