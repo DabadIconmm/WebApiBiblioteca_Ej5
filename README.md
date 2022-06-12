@@ -1,6 +1,12 @@
+<<<<<<< HEAD
 #**Descripción**
 
 ##**Ejercicio 1**
+=======
+# **Descripción**
+
+## **Ejercicio 1**
+>>>>>>> 5b4f842cde647aa26826f30b3f12c6e4852859c7
 
 - Crear una nueva tabla Usuarios en nuestra base de datos con los campos Email y Password.
 
@@ -10,18 +16,18 @@
 
 - Actualizar la base de datos
 
-##**Ejercicio 2**
+## **Ejercicio 2**
 
 - Configurar el nivel de log de la aplicación para nuestro proyecto a Information.
 
-##**Ejercicio 3**
+## **Ejercicio 3**
 
 - Desarrollar una tarea programada que envíe un correo diario a las 21:00 a todos los usuarios de la tabla.
 
-##**Ejercicio 4**
+## **Ejercicio 4**
 
 - Desarrollar un filtro de excepción que haga un log mediante ILogger de todos los errores de todos los controladores del proyecto.
 
-##**Ejercicio 5**
+## **Ejercicio 5**
 
 - Desarrollar un Middleware que haga un log mediante ILogger con la url de la procedencia de cada petición que recibe nuestra API.
