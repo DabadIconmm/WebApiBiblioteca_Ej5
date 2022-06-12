@@ -11,15 +11,19 @@ namespace Ejercicio_Sesión_1.Controllers
     {
 
         private readonly ApplicationDbContext context;
+        private readonly ILogger<EditorialController> logger;
+
         //4.2
-        public EditorialController(ApplicationDbContext context)
+        public EditorialController(ApplicationDbContext context, ILogger<EditorialController> logger)
         {
             this.context = context;
+            this.logger = logger;
         }
         //4.3.a
         [HttpGet("ListEditoriales")]
         public async Task<IEnumerable<Editorial>> Get()
         {
+            logger.LogInformation("Obteniendo lista Editoriales");
             return await context.Editoriales.ToListAsync();
         }
         //4.3.b
@@ -31,6 +35,7 @@ namespace Ejercicio_Sesión_1.Controllers
             //var editorial = await context.Editoriales.FirstOrDefaultAsync(x=>x.Id==id);
             //Para devolver un indice
             var editorial = await context.Editoriales.FindAsync(id);
+            logger.LogInformation("Obteniendo Editoriales por ID: " + id);
             return Ok(editorial);
         }
         //4.3.c

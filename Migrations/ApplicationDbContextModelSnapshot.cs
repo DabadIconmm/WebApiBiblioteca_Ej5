@@ -35,7 +35,7 @@ namespace Ejercicio_Sesión_1.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Editoriales");
+                    b.ToTable("Editoriales", (string)null);
 
                     b.HasData(
                         new
@@ -73,7 +73,7 @@ namespace Ejercicio_Sesión_1.Migrations
 
                     b.HasIndex("EditorialId");
 
-                    b.ToTable("Libros");
+                    b.ToTable("Libros", (string)null);
 
                     b.HasData(
                         new

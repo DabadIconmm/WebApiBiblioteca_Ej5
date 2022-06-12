@@ -1,5 +1,6 @@
 using Ejercicio_Sesión_1;
 using Microsoft.EntityFrameworkCore;
+using WebApiAlmacen.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -19,6 +20,10 @@ builder.Services.AddDbContext<ApplicationDbContext>(opciones =>
     //Con esto hacemos que no se realize el traking de los registros de una BBDD, así somos explícitos donde queremos hacer el tracking.
     opciones.UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);
 });
+
+builder.Services.AddHttpContextAccessor();
+
+//builder.Services.AddHostedService<TareaProgramadaService>();
 
 var app = builder.Build();
 
