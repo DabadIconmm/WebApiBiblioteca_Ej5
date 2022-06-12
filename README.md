@@ -1,4 +1,4 @@
-# **Sesion 5: **
+# **Sesion 5:**
 
 ## **Ejercicio 1**
 
