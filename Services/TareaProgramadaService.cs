@@ -1,7 +1,7 @@
 using Ejercicio_Sesión_1;
 using Microsoft.EntityFrameworkCore;
 
-namespace WebApiAlmacen.Services
+namespace Ejercicio_Sesión_1.Services
 {
 
     public class TareaProgramadaService : IHostedService
